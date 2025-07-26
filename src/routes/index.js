@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import SingIn from "../pages/SingIn";
 import SingUp from "../pages/SingUp";
+import useAuth from "../hooks/useAuth";
 
 const Private = ({ Item }) => {
-    const singned = false;
+    const { singned } = useAuth();
 
     return singned > 0 ? <Item /> : <SingIn />;
 };
